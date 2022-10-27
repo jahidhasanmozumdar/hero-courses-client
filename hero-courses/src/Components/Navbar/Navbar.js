@@ -6,7 +6,6 @@ import auth from "../../firebase.init";
 
 const Navbar = () => {
   const [userDetails, setUserDetails] = useState();
-  const [slider, setSlider] = useState(false);
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -114,9 +113,32 @@ const Navbar = () => {
           </label>
 
           {userDetails?.uid ? (
-            <button onClick={handleSignOut} className="btn btn-rounded">
-              {userDetails?.email.slice(0, 2)}
-            </button>
+            <>
+              <div className="dropdown dropdown-end">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <button
+                    // onClick={() => handleSignOutBtn(!signOutBtn)}
+                    className="w-12 uppercase text-white h-12 rounded-full bg-gray-700"
+                  >
+                    {userDetails?.email.slice(0, 2)}
+                  </button>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+                >
+                  <li className="p-2">{userDetails?.displayName}</li>
+                  <li className="text-center">
+                    <button
+                      onClick={handleSignOut}
+                      className="text-center justify-center flex mx-auto"
+                    >
+                      Log Out
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </>
           ) : (
             <Link to="/login">Log In</Link>
           )}

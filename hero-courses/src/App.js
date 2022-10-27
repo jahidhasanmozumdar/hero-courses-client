@@ -9,6 +9,7 @@ import Login from "./Components/Login/Login";
 import DetailsPage from "./Components/DetailsPage/DetailsPage";
 import Checkout from "./Components/Checkout/Checkout";
 import RequireAuth from "./Components/Hook/RequireAuth";
+import Blog from "./Components/Blog/Blog";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </div>
   );
