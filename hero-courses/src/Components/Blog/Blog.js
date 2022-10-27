@@ -11,7 +11,7 @@ const Blog = () => {
         what is cors?
         </div>
         <div className="collapse-content">
-          <p>tabIndex={0} attribute is necessary to make the div focusable</p>
+         cors  is Cross-Origin Resource Sharing
         </div>
       </div>
       <div
