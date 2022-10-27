@@ -6,9 +6,9 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="max-w-screen-2xl px-12 mx-auto mt-16">
-      <div className="flex gap-x-8 justify-center items-center">
+      <div className="flex flex-col lg:flex-row gap-8 justify-center items-center">
         <div className="w-full">
-          <h2 className="text-7xl font-bold leading-16">
+          <h2 className="lg:text-7xl text-4xl font-bold leading-16">
             Build Bright Life? <br /> Take Our Life Course
           </h2>
           <p className="leading-8 mt-6 text-xl">

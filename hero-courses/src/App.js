@@ -13,7 +13,7 @@ import Blog from "./Components/Blog/Blog";
 
 function App() {
   return (
-    <div className="bg-slate-100/70 h-screen">
+    <div className="">
       <Navbar />
 
       <Routes>

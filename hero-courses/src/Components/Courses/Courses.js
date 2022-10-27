@@ -14,7 +14,7 @@ const Courses = () => {
 
   return (
     <div className="max-w-screen-2xl px-12 mx-auto mt-16">
-      <div className="grid grid-cols-4 gap-x-8">
+      <div className="lg:grid grid-cols-4 flex flex-col gap-x-8">
         <div className="bg-gray-100/70 flex flex-col">
           {course.map((c) => (
             <div key={c._id} className="">
@@ -27,7 +27,7 @@ const Courses = () => {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-3 gap-6 col-span-3 ">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 col-span-3 mt-4">
           {course.map((c) => (
             <div
               key={c._id}

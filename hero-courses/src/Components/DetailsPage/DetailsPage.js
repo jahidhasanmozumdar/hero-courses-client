@@ -10,6 +10,7 @@ const DetailsPage = () => {
       .then((res) => res.json())
       .then((data) => setCourse(data));
   }, []);
+
   return (
     <div className="max-w-screen-2xl mx-auto px-12 mt-16 pb-6">
       <div
@@ -17,18 +18,27 @@ const DetailsPage = () => {
         className="card card-compact  bg-base-100 shadow-xl py-2"
       >
         <figure>
-          <img className="img-fluid w-full" src={course.photo} alt="Shoes" />
+          <img
+            className="img-fluid w-[50vh] h-[50vh]"
+            src={course.photo}
+            alt="Shoes"
+          />
         </figure>
-        <div className="card-body">
+        <div className="card-body ">
           <h2 className="card-title">{course.name}</h2>
           <p>{course.description}</p>
         </div>
-        <button
-          onClick={() => navigate(`/checkout/${course._id}`)}
-          className="bg-red-400/60 w-56 flex justify-center mx-auto rounded-md px-6 py-2"
-        >
-          Get Premium Access
-        </button>
+        <div className="">
+          <button
+            onClick={() => navigate(`/checkout/${course._id}`)}
+            className="bg-red-400/60 w-56 flex justify-center mx-auto rounded-md px-6 py-2"
+          >
+            Get Premium Access
+          </button>
+          <button className="bg-green-400/60 w-56 flex justify-center mx-auto rounded-md px-6 py-2 mt-4">
+            Download here
+          </button>
+        </div>
       </div>
     </div>
   );
