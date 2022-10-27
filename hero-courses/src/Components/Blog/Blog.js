@@ -33,7 +33,7 @@ const Blog = () => {
         how does work private route?
         </div>
         <div className="collapse-content">
-          
+        The private route component is similar to the public route, the only change is that redirect URL and authenticate condition. If the user is not authenticated he will be redirected to the login page and the user can only access the authenticated routes If he is authenticated Logged in
         </div>
       </div>
     </div>
