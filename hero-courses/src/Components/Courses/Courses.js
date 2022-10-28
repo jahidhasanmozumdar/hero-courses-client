@@ -7,7 +7,7 @@ const Courses = () => {
   const navigate = useNavigate();
   const [course, setCourse] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/course")
+    fetch("https://hero-server-coral.vercel.app/course")
       .then((res) => res.json())
       .then((data) => setCourse(data));
   }, []);
@@ -17,9 +17,9 @@ const Courses = () => {
       <div className="lg:grid grid-cols-4 flex flex-col gap-x-8">
         <div className="bg-gray-100/70 flex flex-col">
           {course.map((c) => (
-            <div key={c._id} className="">
+            <div key={c.id} className="">
               <h2
-                onClick={() => navigate(`/course/${c._id}`)}
+                onClick={() => navigate(`/course/${c.id}`)}
                 className="card-title hover:bg-gray-200/70 border-b px-12 py-4 cursor-pointer"
               >
                 {c.name}
@@ -30,7 +30,7 @@ const Courses = () => {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 col-span-3 mt-4">
           {course.map((c) => (
             <div
-              key={c._id}
+              key={c.id}
               className="card card-compact  bg-base-100 shadow-xl"
             >
               <figure>
@@ -45,7 +45,7 @@ const Courses = () => {
                 <p>{c.description.slice(0, 150) + "..."}</p>
                 <div className="card-actions justify-end">
                   <button
-                    onClick={() => navigate(`/course/${c._id}`)}
+                    onClick={() => navigate(`/course/${c.id}`)}
                     className="btn btn-primary"
                   >
                     Learn More

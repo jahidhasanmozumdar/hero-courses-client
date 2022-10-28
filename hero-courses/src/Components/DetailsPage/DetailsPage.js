@@ -6,7 +6,7 @@ const DetailsPage = () => {
   const { id } = useParams();
   const [course, setCourse] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/course/${id}`)
+    fetch(`https://hero-server-coral.vercel.app/course/${id}`)
       .then((res) => res.json())
       .then((data) => setCourse(data));
   }, []);
@@ -14,7 +14,7 @@ const DetailsPage = () => {
   return (
     <div className="max-w-screen-2xl mx-auto px-12 mt-16 pb-6">
       <div
-        key={course._id}
+        key={course.id}
         className="card card-compact  bg-base-100 shadow-xl py-2"
       >
         <figure>
@@ -30,7 +30,7 @@ const DetailsPage = () => {
         </div>
         <div className="">
           <button
-            onClick={() => navigate(`/checkout/${course._id}`)}
+            onClick={() => navigate(`/checkout/${course.id}`)}
             className="bg-red-400/60 w-56 flex justify-center mx-auto rounded-md px-6 py-2"
           >
             Get Premium Access
